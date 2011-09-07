@@ -1,3 +1,72 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+
+/*dev*/
+body {
+	background: url(background.jpg) top left no-repeat;
+	font-family: 'Istok Web' sans-serif;
+	font-size: 13px;
+}
+
+#container {
+	width: 1136px;
+	margin: 0 auto;
+}
+
+#left {
+	margin-top: 30px;
+	margin-left: 150px;
+	width: 350px;
+	text-align: center;
+	#logo {
+		margin: 10px 0;
+	}
+	h2 {
+		font-weight: bold;
+		font-size: 34px;
+		line-height: 40px;
+		color: #59466d;
+		text-align: left;
+	}
+	h3 p {
+		color: #78797c;
+		text-align: left;
+	}
+	h4, h4 a {
+		color: #ee3a68;
+		text-transform: uppercase;
+		text-align: left;
+	}
+	h2, h3 p, h4 {
+		margin: 5px 0;
+	}
+}
