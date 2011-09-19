@@ -23,16 +23,17 @@
 	</h4>
 </div> -->
 <%#= image_tag 'map.png', :width => "722", :height => "880", :border => "0", :usemap => "#map_Map" %>
-<canvas id="horn" width="722" height="880">
-	Your browser doesn't support canvas.
-</canvas>
+<div id="loader">
+	<canvas id="horn" width="722" height="880" style="display: none;">
+		Your browser doesn't support canvas.
+	</canvas>
+	<div id="loading">
+		Loading...
+	</div>
+</div>
 
 (show loader)
 async javascript:
-- load squares (coords, video id, colour)
 - build map, square by square
   + add link to video for those ones that are taken
   + add facebook login to others
-- fade out loader
-- load image
-- fade in image

@@ -31,10 +31,11 @@ abbr,acronym { border:0;
 }
 
 /*dev*/
+$fs: 13px;
 body {
 /*	background: url(background.jpg) top left no-repeat;*/
 	font-family: 'Istok Web' sans-serif;
-	font-size: 13px;
+	font-size: $fs;
 }
 
 #container {
@@ -69,4 +70,13 @@ body {
 	h2, h3 p, h4 {
 		margin: 5px 0;
 	}
+}
+
+#loader {
+	width: 772px;
+	height: 880px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	font-size: $fs*2;
 }

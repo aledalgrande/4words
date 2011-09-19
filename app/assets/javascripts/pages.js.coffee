@@ -28,7 +28,7 @@ class Horn
 @horn = new Horn()
 
 class Square
-	constructor: (@x, @y, @width, @height, @colour, @taken) ->
+	constructor: (@id, @x, @y, @width, @height, @colour, @taken) ->
 
 drawMap = =>
 	canvas = document.getElementById("horn")
@@ -38,7 +38,9 @@ drawMap = =>
 		do (square) ->
 			context.fillStyle = square.colour
 			context.fillRect(square.x, square.y, square.width, square.height)
-			@horn.push(new Square(square.x, square.y, square.width, square.height, square.colour, square.taken))
+			@horn.push(new Square(square.id, square.x, square.y, square.width, square.height, square.colour, square.taken))
+	$('#loading').fadeOut()
+	$('#horn').fadeIn()
 
 getMouseCoords = (event) ->
 	if event.pageX != null && event.pageY != null
@@ -58,5 +60,5 @@ execute = (event) =>
 	mouseCoords = getMouseCoords(event)
 	if(mouseCoords == null)
 		return
-	@horn.getSquareAt(mouseCoords.x, mouseCoords.y)
+	alert 'Clicked on square number ' + @horn.getSquareAt(mouseCoords.x, mouseCoords.y).id
 	# context.clearRect
