@@ -1,4 +1,4 @@
-<div id="left">
+<!-- <div id="left">
 	<div id="logo">
 		<%= image_tag "logo.png", :title => "logo", :class => "logo" %>
 	</div>
@@ -13,7 +13,7 @@
 			nutrition to one person for just 50¢ per day.
 		</p>
 		<p>
-			Your donation now will save lives., submit your video 
+			Your donation now will save lives, submit your video 
 			10 secs where you can express your wish to help Africa.
 		</p>
 	</h3>
@@ -21,4 +21,18 @@
 	<h4>
 		Full website coming soon but you don’t have to wait to make a <%= link_to 'donation', 'http://5050.gd' %>.
 	</h4>
-</div>
+</div> -->
+<%#= image_tag 'map.png', :width => "722", :height => "880", :border => "0", :usemap => "#map_Map" %>
+<canvas id="horn" width="722" height="880">
+	Your browser doesn't support canvas.
+</canvas>
+
+(show loader)
+async javascript:
+- load squares (coords, video id, colour)
+- build map, square by square
+  + add link to video for those ones that are taken
+  + add facebook login to others
+- fade out loader
+- load image
+- fade in image
