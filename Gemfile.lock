@@ -45,10 +45,6 @@ GEM
       execjs
     coffee-script-source (1.1.2)
     daemons (1.1.4)
-    devise (1.4.6)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.0.3)
-      warden (~> 1.0.3)
     erubis (2.7.0)
     eventmachine (0.12.10)
     execjs (1.2.4)
@@ -121,7 +117,6 @@ GEM
       oa-more (= 0.3.0.rc3)
       oa-oauth (= 0.3.0.rc3)
       oa-openid (= 0.3.0.rc3)
-    orm_adapter (0.0.5)
     pg (0.11.0)
     polyglot (0.3.2)
     pyu-ruby-sasl (0.0.3.3)
@@ -191,15 +186,12 @@ GEM
       multi_json (>= 1.0.2)
     uuid (2.3.4)
       macaddr (~> 1.0)
-    warden (1.0.5)
-      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   coffee-rails (~> 3.1.0)
-  devise
   heroku
   jquery-rails
   omniauth (~> 0.3.0.rc3)
