@@ -16,49 +16,31 @@ class Horn
 	push: (square) ->
 		@squares or= []
 		@squares.push square
-	
-	getSquareAt: (x, y) ->
-		found = null
-		for square in @squares
-			do (square) ->
-				if square.x <= x && square.x + square.width >= x && square.y <= y && square.y + square.height >= y
-					found = square
-		return found
-		
+
 @horn = new Horn()
 
 class Square
-	constructor: (@id, @x, @y, @width, @height, @colour, @taken) ->
+	constructor: (@id, @raph, @colour, @taken, @link) ->
+		@raph.attr('fill', '#' + @colour)
+		@raph.attr('stroke', '#333')
+		@raph.hover((event) ->
+			$('svg').append(this)   # max z-index for this element now (constrained to SVG ordering)
+			s = this.animate({scale: '10'}, 500, 'bounce')
+			this.animateWith(s, {stroke: '#fff'}, 300, 'backin')
+		, (event) ->
+			s = this.animate({stroke: '#333'}, 300, 'backin')
+			this.animateWith(s, {scale: '1'}, 500, 'bounce')
+		)
+		@raph.click ->
+			taken = if @taken then 'taken' else 'not taken'
+			alert 'wohooo clicked on square number ' + @id + ' and it is ' + taken
 
 drawMap = =>
-	canvas = document.getElementById("horn")
-	context = canvas.getContext("2d")
-	canvas.addEventListener("click", execute, false);
+	@paper = Raphael('loader', 725, 900)
+	$('svg').hide()
 	for square in squares
 		do (square) ->
-			context.fillStyle = square.colour
-			context.fillRect(square.x, square.y, square.width, square.height)
-			@horn.push(new Square(square.id, square.x, square.y, square.width, square.height, square.colour, square.taken))
-	$('#loading').fadeOut()
-	$('#horn').fadeIn()
-
-getMouseCoords = (event) ->
-	if event.pageX != null && event.pageY != null
-		x = event.pageX
-		y = event.pageY
-	else
-		x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft
-		y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop
-	canvas = document.getElementById("horn")
-	x -= canvas.offsetLeft
-	y -= canvas.offsetTop
-	coords =
-		x: x
-		y: y
-
-execute = (event) =>
-	mouseCoords = getMouseCoords(event)
-	if(mouseCoords == null)
-		return
-	alert 'Clicked on square number ' + @horn.getSquareAt(mouseCoords.x, mouseCoords.y).id
-	# context.clearRect
+			raph_square = @paper.rect(square.x, square.y, square.width, square.height)
+			@horn.push(new Square(square.id, raph_square, square.colour, square.taken))
+	$('#loading').fadeOut(500)
+	setTimeout("$('svg').fadeIn()", 500)

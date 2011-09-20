@@ -1,7 +1,10 @@
-<!-- <div id="left">
+<div id="left">
 	<div id="logo">
 		<%= image_tag "logo.png", :title => "logo", :class => "logo" %>
 	</div>
+</div>
+
+<div id="right">
 	<h2>
 		13 million people in 
 		the Horn of Africa are facing a hunger crisis.
@@ -18,22 +21,31 @@
 		</p>
 	</h3>
 	
-	<h4>
-		Full website coming soon but you don’t have to wait to make a <%= link_to 'donation', 'http://5050.gd' %>.
-	</h4>
-</div> -->
-<%#= image_tag 'map.png', :width => "722", :height => "880", :border => "0", :usemap => "#map_Map" %>
+	<div id="donate">
+		<%= link_to '#' do %>
+			<%= image_tag 'donate-button.png' %>
+		<% end %>
+	</div>
+	
+	<%= image_tag 'mini-africa.png', :id => 'mini-africa' %>
+</div>
+
 <div id="loader">
-	<canvas id="horn" width="722" height="880" style="display: none;">
-		Your browser doesn't support canvas.
-	</canvas>
 	<div id="loading">
 		Loading...
 	</div>
+	<!-- <canvas id="horn" width="722" height="880" style="display: none;">
+		Your browser doesn't support canvas.
+	</canvas> -->
 </div>
+
+<script type="text/javascript">
+	// alert(this.horn);
+</script>
 
 (show loader)
 async javascript:
 - build map, square by square
   + add link to video for those ones that are taken
   + add facebook login to others
+- add index to squares table (?)
