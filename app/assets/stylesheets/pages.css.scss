@@ -90,7 +90,7 @@ body {
 	vertical-align: middle;
 	font-size: $fs*2;
 	position: absolute;
-	top: 300px;
+	top: 350px;
 	left: 160px;
 }
 
@@ -98,4 +98,15 @@ body {
 	text-align: right;
 	padding-right: 30px;
 	padding-top: 10px;
+}
+
+nav {
+	background: url(nav_background.png) bottom left no-repeat;
+	width: 805px;
+	height: 30px;
+	padding-top: 15px;
+	margin: 0 auto;
+	a {
+		text-transform: capitalize;
+	}
 }

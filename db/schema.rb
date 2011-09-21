@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110919115750) do
+ActiveRecord::Schema.define(:version => 20110921214436) do
 
   create_table "squares", :force => true do |t|
     t.integer  "x"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20110919115750) do
     t.integer  "height"
     t.string   "colour",     :default => "808285"
     t.boolean  "taken",      :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -9,6 +9,8 @@ FourWords::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   
+  match '/auth/:provider/callback' => 'sessions#create'
+  match '/signout' => 'sessions#destroy', :as => :signout
   match '/canvas_squares.js' => 'squares#index'
   match '/:action', :controller => 'pages', :as => 'static', :constraints => {:action => /(?=squares)/}
   

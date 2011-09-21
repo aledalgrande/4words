@@ -9,6 +9,17 @@
 </head>
 <body>
 <div id="container">
+	<nav>
+		<div id="about"><%= link_to 'about', '/about' %></div>
+		<div id="session">
+			<% if current_user %>
+				<%= image_tag current_user.image_url %> <%= current_user.name %>
+				<%= link_to 'Sign Out', signout_path %>
+			<% else %>
+				<%= link_to 'Sign in with Facebook', '/auth/facebook' %>
+			<% end %>
+		</div>
+	</nav>
 	<%= yield %>
 </div>
 
