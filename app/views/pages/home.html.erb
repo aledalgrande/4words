@@ -1,3 +1,7 @@
+<% if current_user %>
+	<div id="user_id" style="display: none;"><%= current_user.id %></div>
+<% end %>
+
 <div id="left">
 	<div id="logo">
 		<%= image_tag "logo.png", :title => "logo", :class => "logo" %>
@@ -36,9 +40,15 @@
 	</div>
 </div>
 
+<script src="http://cdn.jquerytools.org/1.2.5/tiny/jquery.tools.min.js"></script>
 <script type="text/javascript">
-	// alert(this.horn);
+	function checkSquare(taken) {
+		// if taken_square
+		// 	$('svg').append(taken_square)
+		// 	taken_square.glow(5, '#C40000', 0.75)
+	}
 </script>
+
 
 (show loader)
 async javascript:
@@ -46,3 +56,7 @@ async javascript:
   + add link to video for those ones that are taken
   + add facebook login to others
 - add index to squares table (?)
+
+Dailymotion API to get the videos:
+https://api.dailymotion.com/user/USER_ID/videos
+https://api.dailymotion.com/video/VIDEO_ID?fields=embed_html

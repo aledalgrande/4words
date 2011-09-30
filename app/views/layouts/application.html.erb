@@ -16,7 +16,7 @@
 				<%= image_tag current_user.image_url %> <%= current_user.name %>
 				<%= link_to 'Sign Out', signout_path %>
 			<% else %>
-				<%= link_to 'Sign in with Facebook', '/auth/facebook' %>
+				<%= link_to 'Sign in with Facebook', '/auth/facebook', :id => 'signin' %>
 			<% end %>
 		</div>
 	</nav>
