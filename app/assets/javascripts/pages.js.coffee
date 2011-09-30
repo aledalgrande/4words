@@ -32,8 +32,9 @@ class Square
 		raph_square.click =>
 			$('svg').append(raph_square)   # max z-index for this element now (constrained to SVG ordering)
 			raph_square.animate({stroke: '#333'}, 500, '<>')
-			ani = Raphael.animation({width: 200, height: 200, x: @x-100, y: @y-100}, 500, 'bounce') # fix when overlapping borders of canvas
-			raph_square.animate(ani)
+			s_x = if @x > 625 then 525 else (if @x-100 > 0 then @x-100 else 0)
+			s_y = if @y > 800 then 700 else (if @y-100 > 0 then @y-100 else 0)
+			raph_square.animate({width: 200, height: 200, x: s_x, y: s_y}, 500, 'bounce')
 			checkSquare(@colour)
 
 drawMap = =>
