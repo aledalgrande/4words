@@ -42,27 +42,29 @@
 
 <script src="http://cdn.jquerytools.org/1.2.5/tiny/jquery.tools.min.js"></script>
 <script type="text/javascript">
-	function checkSquare(taken) {
-		// if taken_square
-		// 	$('svg').append(taken_square)
-		// 	taken_square.glow(5, '#C40000', 0.75)
+	function canTake() {
+		<% if current_user && current_user.square.nil? %>
+			return true;
+		<% else %>
+			return false;
+		<% end %>
 	}
 	function squareText(user_id, user_name) {
 		<% if current_user && !current_user.square %>
 			if (user_id) {
-				if (user_id == '<%= current_user.id if current_user %>')
-					return 'Yours!'
-				else
-					return user_name
-			}
-			else
-				return 'Take square!'
-		<% else %>
-			if (user_id) {
-				return user_name
+				return user_name;
 			}
 			else {
-				return 'Not taken.'
+				// show overlay
+			}
+		<% else %>
+			if (user_id == '<%= current_user.id if current_user %>')
+				return user_name + ' (you!)';
+			else if (user_id) {
+				return user_name;
+			}
+			else {
+				return 'Not taken.';
 			}
 		<% end %>
 	}

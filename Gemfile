@@ -6,7 +6,7 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'therubyracer-heroku'
-gem 'omniauth', '~> 0.3.0.rc3', :require => "omniauth/oauth"
+gem 'omniauth', '~> 0.3.0', :require => "omniauth/oauth"
 
 # Gems used only for assets and not required
 # in production environments by default.

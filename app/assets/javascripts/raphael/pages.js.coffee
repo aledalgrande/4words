@@ -46,10 +46,17 @@ class Square
 				s_y = if @y > 800 then 700 else (if @y-100 > 0 then @y-100 else 0)
 				stretch = raph_square.animate({width: 200, height: 200, x: s_x, y: s_y}, 500, 'bounce')
 				@text = @paper.text(s_x+100, s_y+100, organise_text(squareText(@user_id, @user_name)))
+				@text.click ->
+					Square::takeover()
 				@set.push @text
 				@text.attr {opacity: 0, 'font-family': 'Istok Web', 'font-size': 30}
 				@text.animateWith(raph_square, stretch, {opacity: 1}, 500, '<>')
-				checkSquare @colour
+			else
+				Square::takeover()
+	
+	takeover: ->
+		if canTake
+			alert 'taking'
 
 drawMap = =>
 	@paper = Raphael('loader', 725, 900)
