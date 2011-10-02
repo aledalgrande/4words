@@ -47,6 +47,25 @@
 		// 	$('svg').append(taken_square)
 		// 	taken_square.glow(5, '#C40000', 0.75)
 	}
+	function squareText(user_id, user_name) {
+		<% if current_user && !current_user.square %>
+			if (user_id) {
+				if (user_id == '<%= current_user.id if current_user %>')
+					return 'Yours!'
+				else
+					return user_name
+			}
+			else
+				return 'Take square!'
+		<% else %>
+			if (user_id) {
+				return user_name
+			}
+			else {
+				return 'Not taken.'
+			}
+		<% end %>
+	}
 </script>
 
 

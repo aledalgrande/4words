@@ -1,7 +1,7 @@
 class SquaresController < ApplicationController
 
   def index
-      render :text => "squares = #{Square.all.to_json(:except => [:created_at, :updated_at])}"
+      render :text => "squares = #{Square.includes(:user).to_json()}"
   end
 
 end
