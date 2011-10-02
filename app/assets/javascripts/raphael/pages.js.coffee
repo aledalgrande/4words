@@ -56,7 +56,16 @@ class Square
 	
 	takeover: ->
 		if canTake
-			alert 'taking'
+			mask =
+				color: '#fff'
+				loadSpeed: 200
+				opacity: 0.5
+			props =
+				top: ($(window).height()-$('#overlay').height())/2
+				mask: mask
+				load: true
+				closeOnClick: false
+			$("#overlay").overlay props
 
 drawMap = =>
 	@paper = Raphael('loader', 725, 900)

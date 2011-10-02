@@ -55,7 +55,7 @@
 				return user_name;
 			}
 			else {
-				// show overlay
+				return 'Take square!';
 			}
 		<% else %>
 			if (user_id == '<%= current_user.id if current_user %>')
@@ -70,6 +70,36 @@
 	}
 </script>
 
+<div id="overlay">
+	<div class="cont">
+		<h2>Take over your square!</h2>
+		<p>To get hold of this square you need a video of yourself where the only constraint is you have to say the four words: "Help for a change". The rest is up to you!</p>
+		<p>When you have the video you just need to complete 4 steps:</p>
+		<ul>
+			<li>
+				Go to <%= link_to 'Dailymotion', 'http://www.dailymotion.com', :target => :blank %> and login with Facebook<br/>
+				<%= image_tag 'signin_dailymotion.png' %>
+			</li>
+			<li>
+				Upload the video or record it from your webcam (remember the 4 words)
+			</li>
+			<li>
+				Go to your Dailymotion profile and copy your username in the following field
+				<%= image_tag 'username_dailymotion.png' %>
+			</li>
+		</ul>
+		<%= form_tag '/takeover' do %>
+			<p><%= text_field_tag 'url' %></p>
+			<p><%= submit_tag 'Take' %></p>
+		<% end %>
+		<p style="color:#666">
+			To close, click the Close button or hit the ESC key.
+		</p>
+		<p>
+			<button class="close">Close</button>
+		</p>
+	</div>
+</div>
 
 (show loader)
 async javascript:
