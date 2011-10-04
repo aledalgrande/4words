@@ -41,6 +41,7 @@
 </div>
 
 <script src="http://cdn.jquerytools.org/1.2.5/tiny/jquery.tools.min.js"></script>
+<script src="http://api.dmcdn.net/all.js"></script>
 <script type="text/javascript">
 	function canTake() {
 		<% if current_user && current_user.square.nil? %>
@@ -84,17 +85,25 @@
 				Upload the video or record it from your webcam (remember the 4 words)
 			</li>
 			<li>
-				Go to your Dailymotion profile and copy your username in the following field
-				<%= image_tag 'username_dailymotion.png' %>
+				Go to your Dailymotion profile and copy your username<br/>
+				<%= image_tag 'username_dailymotion.png' %><br/>
+				in the following field<br/>
+				<p><%= text_field_tag 'url' %></p>
+			</li>
+			<li>
+				Select the video you want to link to
 			</li>
 		</ul>
+		<p>
+			<%= link_to 'Refresh', '#', :id => 'refresh_dailymotion' %>
+		</p>
 		<%= form_tag '/takeover' do %>
-			<p><%= text_field_tag 'url' %></p>
 			<p><%= submit_tag 'Take' %></p>
 		<% end %>
 		<p style="color:#666">
 			To close, click the Close button or hit the ESC key.
 		</p>
+		<div id="videos"></div>
 		<p>
 			<button class="close">Close</button>
 		</p>

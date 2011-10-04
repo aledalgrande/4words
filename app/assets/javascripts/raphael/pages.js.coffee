@@ -89,3 +89,15 @@ organise_text = (text) ->
 			organised_text[current_row] or= ''
 			organised_text[current_row] = chunk
 	organised_text.join('\n')
+
+$ ->
+	d_opts =
+		apiKey: 'd02466c27526046aeb4c'
+	DM.init d_opts
+	$('#refresh_dailymotion').click (e) ->
+		e.preventDefault()
+		$('#videos').html('')
+		DM.api '/user/Alexander_DalGrande/videos', {limit: 5}, (response) ->
+			for video in response.list
+				DM.api "/video/#{video.id}", {fields: 'thumbnail_small_url,title,id,created_time,duration'}, (response) =>
+					$('#videos').append "<div id=\"#{response.id}\" class=\"video\"><img src=\"#{response.thumbnail_small_url}\"/>#{response.title}</div>"
