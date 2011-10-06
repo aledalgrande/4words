@@ -32,6 +32,7 @@ abbr,acronym { border:0;
 
 /*dev*/
 $fs: 13px;
+$violet: #59466D;
 body {
 /*	background: url(background.jpg) top left no-repeat;*/
 	font-family: 'Istok Web' sans-serif;
@@ -132,7 +133,7 @@ nav {
 		margin:-11px;
 		margin-bottom:0px;
 		color:#fff;
-		background-color:#59466D;
+		background-color: $violet;
 		padding:5px 10px;
 		border:1px solid #7B688F;
 		font-size:20px;
@@ -141,6 +142,25 @@ nav {
 		list-style-type: square;
 		li {
 			margin-left: 20px;
+		}
+	}
+}
+
+#videos {
+	height: 120px;
+	overflow: scroll;
+	text-align: center;
+	.video {
+		float: left;
+		width: 80px;
+		img {
+			border: 3px solid white;
+		}
+		.selected {
+			border: 3px solid $violet;
+		}
+		p {
+			font-size: $fs - 3;
 		}
 	}
 }

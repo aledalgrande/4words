@@ -1,6 +1,6 @@
 class Square < ActiveRecord::Base
   belongs_to :user
-  before_save :set_colour
+  before_save :set_colour, :unset_html
   
   STD_COLOURS = { :taken => 'FFFFFF', :not_taken => '808285' }
   
@@ -11,7 +11,7 @@ class Square < ActiveRecord::Base
       :height => height,
       :taken => taken,
       :user_id => user_id,
-      :video_url => video_url,
+      :html => html,
       :width => width,
       :x => x,
       :y => y,
@@ -22,5 +22,9 @@ class Square < ActiveRecord::Base
   
   def set_colour
     user_id ? self.colour = STD_COLOURS[:taken] : self.colour = STD_COLOURS[:not_taken]
+  end
+  
+  def unset_html
+    self.html = nil unless user_id
   end
 end

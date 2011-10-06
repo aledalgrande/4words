@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110921221916) do
+ActiveRecord::Schema.define(:version => 20111006120400) do
 
   create_table "squares", :force => true do |t|
     t.integer  "x"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20110921221916) do
     t.datetime "updated_at"
     t.string   "video_url"
     t.integer  "user_id"
+    t.text     "html"
   end
 
   create_table "users", :force => true do |t|

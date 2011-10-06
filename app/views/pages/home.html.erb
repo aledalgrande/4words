@@ -88,35 +88,28 @@
 				Go to your Dailymotion profile and copy your username<br/>
 				<%= image_tag 'username_dailymotion.png' %><br/>
 				in the following field<br/>
-				<p><%= text_field_tag 'url' %></p>
+				<p><%= text_field_tag 'username' %></p>
 			</li>
 			<li>
-				Select the video you want to link to
+				Click on the video you want to link to (it usually takes 10-15 minutes to Dailymotion to publish it)
+				<p>
+					<%= link_to 'Refresh', '#', :id => 'refresh_dailymotion' %>
+				</p>
+				<div id="videos">&nbsp;</div>
 			</li>
 		</ul>
-		<p>
-			<%= link_to 'Refresh', '#', :id => 'refresh_dailymotion' %>
-		</p>
 		<%= form_tag '/takeover' do %>
+			<%= hidden_field_tag 'video_embed_html' %>
+			<%= hidden_field_tag 'square_id' %>
 			<p><%= submit_tag 'Take' %></p>
 		<% end %>
 		<p style="color:#666">
 			To close, click the Close button or hit the ESC key.
 		</p>
-		<div id="videos"></div>
 		<p>
 			<button class="close">Close</button>
 		</p>
 	</div>
 </div>
 
-(show loader)
-async javascript:
-- build map, square by square
-  + add link to video for those ones that are taken
-  + add facebook login to others
-- add index to squares table (?)
-
-Dailymotion API to get the videos:
-https://api.dailymotion.com/user/USER_ID/videos
-https://api.dailymotion.com/video/VIDEO_ID?fields=embed_html
+<div id="video_overlay"></div>
