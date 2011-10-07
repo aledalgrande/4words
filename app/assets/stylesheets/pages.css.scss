@@ -113,30 +113,27 @@ nav {
 }
 
 #overlay {
-	/* overlay is hidden before loading */
 	display:none;
-	/* standard decorations */
 	width:400px;
 	border:10px solid #666;
-	/* for modern browsers use semi-transparent color on the border. nice! */
 	border:10px solid rgba(82, 82, 82, 0.698);
 	/* hot CSS3 features for mozilla and webkit-based browsers (rounded borders) */
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
 	div.cont {
-		padding:10px;
-		border:1px solid #3B5998;
-		background-color:#fff;
-		font-family:"lucida grande",tahoma,verdana,arial,sans-serif
+		padding: 10px;
+		border: 1px solid #3B5998;
+		background-color: #fff;
+		font-family: "lucida grande",tahoma,verdana,arial,sans-serif
 	}
 	h2 {
-		margin:-11px;
-		margin-bottom:0px;
-		color:#fff;
+		margin: -11px;
+		margin-bottom: 0px;
+		color: #fff;
 		background-color: $violet;
-		padding:5px 10px;
-		border:1px solid #7B688F;
-		font-size:20px;
+		padding: 5px 10px;
+		border: 1px solid #7B688F;
+		font-size: 20px;
 	}
 	ul {
 		list-style-type: square;
@@ -144,6 +141,15 @@ nav {
 			margin-left: 20px;
 		}
 	}
+}
+
+#overlay_video {
+	display: none;
+	width: 500px;
+	border: 10px solid #666;
+	border: 10px solid rgba(82, 82, 82, 0.698);
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
 }
 
 #videos {
@@ -163,4 +169,27 @@ nav {
 			font-size: $fs - 3;
 		}
 	}
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(22, 22, 22, 0.898);
+	z-index: 1001;
+}
+
+.content {
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	padding: 16px;
+ 	background-color: white;
+	z-index: 1002;
+	overflow: auto;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
 }

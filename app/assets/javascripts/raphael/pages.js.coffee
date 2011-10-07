@@ -12,6 +12,8 @@ window.onload = ->
 	d_opts =
 		apiKey: 'd02466c27526046aeb4c'
 	DM.init d_opts
+	$('.overlay').click ->
+		$(this).fadeOut()
 	$('#refresh_dailymotion').click (e) ->
 		e.preventDefault()
 		$('#videos').html('')
@@ -85,24 +87,12 @@ class Square
 					square.expand()
 	
 	expand: ->
-		mask =
-			color: '#fff'
-			loadSpeed: 200
-			opacity: 0.5
-		props =
-			top: ($(window).height()-$('#overlay').height())/2
-			mask: mask
-			load: true
-			closeOnClick: false
 		if canTake()
-			$("#overlay").overlay props
+			overlay $("#overlay")
 		else
-			pp @user_id
-			pp @html
 			if @user_id && @html
-				pp 'hello'
-				$("#video_overlay").html(@html)
-				$("#video_overlay").overlay props
+				$("#video_iframe").html(@html)
+				overlay $("#video_overlay")
 
 drawMap = =>
 	@paper = Raphael('loader', 725, 900)
@@ -129,3 +119,8 @@ organise_text = (text) ->
 
 pp = (object) ->
 	alert JSON.stringify object
+
+overlay = (div) ->
+	div.fadeIn()
+	div.find('.content').css 'top', ($(window).height()-div.find('.content').height())/2
+	div.find('.content').css 'left', ($(window).width()-div.find('.content').width())/2
