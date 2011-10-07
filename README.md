@@ -2,7 +2,8 @@
 
 ## How to run
 
-rake task for map
+To generate the map data:
+rake squares:import
 
 add facebook variables to heroku config
 

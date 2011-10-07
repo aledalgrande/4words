@@ -113,25 +113,12 @@ nav {
 }
 
 #overlay {
-	display:none;
-	width:400px;
-	border:10px solid #666;
-	border:10px solid rgba(82, 82, 82, 0.698);
-	/* hot CSS3 features for mozilla and webkit-based browsers (rounded borders) */
-	-moz-border-radius:8px;
-	-webkit-border-radius:8px;
-	div.cont {
-		padding: 10px;
-		border: 1px solid #3B5998;
-		background-color: #fff;
-		font-family: "lucida grande",tahoma,verdana,arial,sans-serif
-	}
-	ul {
-		list-style-type: square;
-		li {
-			margin-left: 20px;
-		}
-	}
+	display: none;
+	width: 400px;
+	border: 10px solid #666;
+	border: 10px solid rgba(82, 82, 82, 0.698);
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
 }
 
 #overlay_video {
@@ -192,5 +179,11 @@ nav {
 	}
 	div.cont {
 		margin: 16px;
+	}
+	ul {
+		list-style-type: square;
+		li {
+			margin-left: 20px;
+		}
 	}
 }

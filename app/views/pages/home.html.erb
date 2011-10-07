@@ -71,44 +71,46 @@
 </script>
 
 <div id="overlay">
-	<div class="cont">
-		<h2>Take over your square!</h2>
-		<p>To get hold of this square you need a video of yourself where the only constraint is you have to say the four words: "Help for a change". The rest is up to you!</p>
-		<p>When you have the video you just need to complete 4 steps:</p>
-		<ul>
-			<li>
-				Go to <%= link_to 'Dailymotion', 'http://www.dailymotion.com', :target => :blank %> and login with Facebook<br/>
-				<%= image_tag 'signin_dailymotion.png' %>
-			</li>
-			<li>
-				Upload the video or record it from your webcam (remember the 4 words)
-			</li>
-			<li>
-				Go to your Dailymotion profile and copy your username<br/>
-				<%= image_tag 'username_dailymotion.png' %><br/>
-				in the following field<br/>
-				<p><%= text_field_tag 'username' %></p>
-			</li>
-			<li>
-				Click on the video you want to link to (it usually takes 10-15 minutes to Dailymotion to publish it)
-				<p>
-					<%= link_to 'Refresh', '#', :id => 'refresh_dailymotion' %>
-				</p>
-				<div id="videos">&nbsp;</div>
-			</li>
-		</ul>
-		<%= form_tag '/takeover' do %>
-			<%= hidden_field_tag 'video_embed_html' %>
-			<%= hidden_field_tag 'dailymotion_id' %>
-			<%= hidden_field_tag 'square_id' %>
-			<p><%= submit_tag 'Take' %></p>
-		<% end %>
-		<p style="color:#666">
-			To close, click the Close button or hit the ESC key.
-		</p>
-		<p>
-			<button class="close">Close</button>
-		</p>
+	<div class="content">
+		<div class="cont">
+			<h2>Take over your square!</h2>
+			<p>To get hold of this square you need a video of yourself where the only constraint is you have to say the four words: "Help for a change". The rest is up to you!</p>
+			<p>When you have the video you just need to complete 4 steps:</p>
+			<ul>
+				<li>
+					Go to <%= link_to 'Dailymotion', 'http://www.dailymotion.com', :target => :blank %> and login with Facebook<br/>
+					<%= image_tag 'signin_dailymotion.png' %>
+				</li>
+				<li>
+					Upload the video or record it from your webcam (remember the 4 words)
+				</li>
+				<li>
+					Go to your Dailymotion profile and copy your username<br/>
+					<%= image_tag 'username_dailymotion.png' %><br/>
+					in the following field<br/>
+					<p><%= text_field_tag 'username' %></p>
+				</li>
+				<li>
+					Click on the video you want to link to (it usually takes 10-15 minutes to Dailymotion to publish it)
+					<p>
+						<%= link_to 'Refresh', '#', :id => 'refresh_dailymotion' %>
+					</p>
+					<div id="videos">&nbsp;</div>
+				</li>
+			</ul>
+			<%= form_tag '/takeover' do %>
+				<%= hidden_field_tag 'video_embed_html' %>
+				<%= hidden_field_tag 'dailymotion_id' %>
+				<%= hidden_field_tag 'square_id' %>
+				<p><%= submit_tag 'Take' %></p>
+			<% end %>
+			<p style="color:#666">
+				To close, click the Close button or hit the ESC key.
+			</p>
+			<p>
+				<button class="close">Close</button>
+			</p>
+		</div>
 	</div>
 </div>
 
