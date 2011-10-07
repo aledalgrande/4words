@@ -8,7 +8,7 @@ class SquaresController < ApplicationController
     if current_user
       unless current_user.square
         square = Square.find(params[:square_id])
-        if square
+        if square && square.user_id.nil?
           current_user.square = square
           square.update_attribute(:html, params[:video_embed_html])
         end
