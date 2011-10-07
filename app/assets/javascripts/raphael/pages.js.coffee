@@ -10,10 +10,12 @@ window.onload = ->
 	x = document.getElementsByTagName('script')[0]
 	x.parentNode.insertBefore(s, x)
 	d_opts =
-		apiKey: ENV['DAILYMOTION']
+		apiKey: 'd02466c27526046aeb4c'
 	DM.init d_opts
 	$('.overlay').click ->
 		$(this).fadeOut()
+	$('.content').click (e) ->
+		e.stopPropagation()
 	$('#refresh_dailymotion').click (e) ->
 		e.preventDefault()
 		$('#videos').html('')

@@ -112,22 +112,16 @@ nav {
 	}
 }
 
-#overlay {
-	display: none;
+#overlay .content {
 	width: 400px;
-	border: 10px solid #666;
-	border: 10px solid rgba(82, 82, 82, 0.698);
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-}
-
-#overlay_video {
-	display: none;
-	width: 500px;
-	border: 10px solid #666;
-	border: 10px solid rgba(82, 82, 82, 0.698);
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
+	.cont {
+		text-align: left;
+	}
+	#username {
+		font-size: $fs;
+		padding: 3px;
+		width: 300px;
+	}
 }
 
 #videos {
