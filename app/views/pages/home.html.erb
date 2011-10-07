@@ -99,6 +99,7 @@
 		</ul>
 		<%= form_tag '/takeover' do %>
 			<%= hidden_field_tag 'video_embed_html' %>
+			<%= hidden_field_tag 'dailymotion_id' %>
 			<%= hidden_field_tag 'square_id' %>
 			<p><%= submit_tag 'Take' %></p>
 		<% end %>
@@ -113,7 +114,10 @@
 
 <div id="video_overlay" class="overlay">
 	<div id="video_content" class="content">
-		See the video
-		<div id="video_iframe"></div>
+		<h2><span id="author"></span>'s 4 words</h2>
+		<div class="cont">
+			<div id="video_iframe"></div>
+			<%= link_to 'Love <3', '#' %> <%= link_to 'Hate </3', '#' %> <span id="views"></span> views
+		</div>
 	</div>
 </div>

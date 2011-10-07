@@ -11,20 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111006120400) do
+ActiveRecord::Schema.define(:version => 20111007171117) do
 
   create_table "squares", :force => true do |t|
     t.integer  "x"
     t.integer  "y"
     t.integer  "width"
     t.integer  "height"
-    t.string   "colour",     :default => "808285"
-    t.boolean  "taken",      :default => false
+    t.string   "colour",         :default => "808285"
+    t.boolean  "taken",          :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "video_url"
     t.integer  "user_id"
     t.text     "html"
+    t.string   "dailymotion_id"
   end
 
   create_table "users", :force => true do |t|

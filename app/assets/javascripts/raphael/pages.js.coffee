@@ -35,6 +35,7 @@ window.onload = ->
 							e.preventDefault()
 							$('.video').removeClass('selected')
 							$(this).find('img').addClass('selected')
+							$('#dailymotion_id').val(response.id)
 							DM.api "/video/#{video.id}", {fields: 'embed_html'}, (response) =>
 								$('#video_embed_html').val(response.embed_html)
 
@@ -48,7 +49,7 @@ class Horn
 @horn = new Horn()
 
 class Square
-	constructor: (@paper, @x, @y, @width, @height, @id, @colour, @user_id, @user_name, @html) ->
+	constructor: (@paper, @x, @y, @width, @height, @id, @colour, @user_id, @user_name, @html, @dailymotion_id) ->
 		id = @id
 		square = this
 		raph_square = @paper.rect(@x, @y, @width, @height)
@@ -91,7 +92,10 @@ class Square
 			overlay $("#overlay")
 		else
 			if @user_id && @html
+				$('#author').text(@user_name)
 				$("#video_iframe").html(@html)
+				DM.api "/video/#{@dailymotion_id}", {fields: 'views_total'}, (response) =>
+					$('#views').text(response.views_total)
 				overlay $("#video_overlay")
 
 drawMap = =>
@@ -99,7 +103,7 @@ drawMap = =>
 	$('svg').hide()
 	for square in squares
 		do (square) ->
-			@horn.push(new Square(@paper, square.x, square.y, square.width, square.height, square.id, square.colour, square.user_id, square.name, square.html))
+			@horn.push(new Square(@paper, square.x, square.y, square.width, square.height, square.id, square.colour, square.user_id, square.name, square.html, square.dailymotion_id))
 	$('#loading').fadeOut(500)
 	setTimeout("$('svg').fadeIn()", 500)
 
