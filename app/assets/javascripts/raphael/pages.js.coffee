@@ -10,7 +10,7 @@ window.onload = ->
 	x = document.getElementsByTagName('script')[0]
 	x.parentNode.insertBefore(s, x)
 	d_opts =
-		apiKey: 'd02466c27526046aeb4c'
+		apiKey: ENV['dailymotion']
 	DM.init d_opts
 	$('.overlay').click ->
 		$(this).fadeOut()
