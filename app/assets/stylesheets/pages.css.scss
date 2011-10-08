@@ -104,6 +104,7 @@ body {
 nav {
 	background: url(nav_background.png) bottom left no-repeat;
 	width: 805px;
+	height: 74px;
 	padding-top: 15px;
 	margin: 0 auto;
 	overflow: hidden;
@@ -121,6 +122,7 @@ nav {
 	li {
 		display: table-cell;
 		padding: 0 10px;
+		height: 59px;
 		vertical-align: middle;
 	}
 }
