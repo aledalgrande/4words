@@ -14,6 +14,7 @@ window.onload = ->
 	DM.init d_opts
 	$('.overlay').click ->
 		$(this).fadeOut()
+		$("#video_iframe").html('')
 	$('.content').click (e) ->
 		e.stopPropagation()
 	$('#refresh_dailymotion').click (e) ->

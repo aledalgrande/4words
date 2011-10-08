@@ -104,11 +104,24 @@ body {
 nav {
 	background: url(nav_background.png) bottom left no-repeat;
 	width: 805px;
-	height: 30px;
 	padding-top: 15px;
 	margin: 0 auto;
+	overflow: hidden;
+	font-size: $fs*1.5;
 	a {
-		text-transform: capitalize;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: $violet;
+		font-weight: bold;
+	}
+	ul {
+		overflow: hidden;
+		margin-bottom: 15px;
+	}
+	li {
+		display: table-cell;
+		padding: 0 10px;
+		vertical-align: middle;
 	}
 }
 

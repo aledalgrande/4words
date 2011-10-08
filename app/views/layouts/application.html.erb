@@ -10,15 +10,27 @@
 <body>
 <div id="container">
 	<nav>
-		<div id="about"><%= link_to 'about', '/about' %></div>
-		<div id="session">
-			<% if current_user %>
-				<%= image_tag current_user.image_url %> <%= current_user.name %>
-				<%= link_to 'Sign Out', signout_path %>
-			<% else %>
-				<%= link_to 'Sign in with Facebook', '/auth/facebook', :id => 'signin' %>
-			<% end %>
-		</div>
+		<ul>
+			<li id="about">
+				<%= link_to 'about', '/about' %>
+			</li>
+				<% if current_user %>
+					<li id="session">
+						<%= link_to 'Sign Out', signout_path %>
+					</li>
+					<li id="user_image">
+						<%= image_tag current_user.image_url %>
+					</li>
+					<li id="user_name">
+						<%= current_user.name %>
+					</li>
+				<% else %>
+					<li id="session">
+						<%= link_to 'Sign in', '/auth/facebook', :id => 'signin' %>
+					</li>
+				<% end %>
+			</li>
+		</ul>
 	</nav>
 	<%= yield %>
 </div>
