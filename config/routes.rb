@@ -13,6 +13,7 @@ FourWords::Application.routes.draw do
   match '/signout' => 'sessions#destroy', :as => :signout
   match '/canvas_squares.js' => 'squares#index'
   match '/takeover' => 'squares#takeover'
+  match '/free' => 'squares#free', :as => :free
   match '/:action', :controller => 'pages', :as => 'static'
   
   # Sample of named route:

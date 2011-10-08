@@ -113,7 +113,8 @@
 		<h2><span id="author"></span>'s 4 words</h2>
 		<div class="cont">
 			<div id="video_iframe"></div>
-			<%= link_to 'Love <3', '#' %> <%= link_to 'Hate </3', '#' %> <span id="views"></span> views
+			<div id="video_meta"><%= link_to 'Love <3', '#' %> <%= link_to 'Hate </3', '#' %> <span id="views"></span> views</div>
+			<div id="video_actions"><%= link_to 'Remove', '#', :onclick => "window.location = '#{free_url}'" %></div>
 		</div>
 	</div>
 </div>

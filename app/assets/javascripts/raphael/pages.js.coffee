@@ -94,11 +94,19 @@ class Square
 		if canTake()
 			overlay $("#overlay")
 		else
-			if @user_id && @html
+			if @user_id
 				$('#author').text(@user_name)
-				$("#video_iframe").html(@html)
-				DM.api "/video/#{@dailymotion_id}", {fields: 'views_total'}, (response) =>
-					$('#views').text(response.views_total)
+				if @html
+					$("#video_iframe").html(@html)
+					$('#video_meta').show()
+					DM.api "/video/#{@dailymotion_id}", {fields: 'views_total'}, (response) =>
+						$('#views').text(response.views_total)
+				else
+					$('#video_meta').hide()
+				if @user_id == parseInt($('#user_id').text().replace(/^\s+|\s+$/g, ''))
+					$('#video_actions').show()
+				else
+					$('#video_actions').hide()
 				overlay $("#video_overlay")
 
 drawMap = =>
