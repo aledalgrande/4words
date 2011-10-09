@@ -91,7 +91,7 @@ class Square
 					square.expand()
 	
 	expand: ->
-		if canTake()
+		if canTake() && !@user_id
 			overlay $("#overlay")
 		else
 			if @user_id
