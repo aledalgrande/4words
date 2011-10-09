@@ -15,8 +15,8 @@ class Square < ActiveRecord::Base
       :width => width,
       :x => x,
       :y => y,
-      :name => user_id ? user.name : nil,
-      :avatar => user_id ? user.image_url : nil,
+      :name => user_id ? user && user.name : nil,
+      :avatar => user_id ? user && user.image_url : nil,
       :dailymotion_id => dailymotion_id
     }
   end

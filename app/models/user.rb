@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
       user.uid = auth['uid']
       user.name = auth['user_info']['name']
       user.image_url = auth['user_info']['image']
+      user.token = auth['credentials']['token']
     end
   end
   

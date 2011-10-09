@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111007171117) do
+ActiveRecord::Schema.define(:version => 20111009112558) do
 
   create_table "squares", :force => true do |t|
     t.integer  "x"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20111007171117) do
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "token"
   end
 
 end

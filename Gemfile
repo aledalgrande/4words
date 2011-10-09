@@ -7,6 +7,7 @@ gem 'rails', '3.1.0'
 
 gem 'therubyracer-heroku'
 gem 'omniauth', '~> 0.3.0', :require => "omniauth/oauth"
+gem 'koala'
 
 # Gems used only for assets and not required
 # in production environments by default.
