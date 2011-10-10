@@ -114,7 +114,7 @@ drawMap = =>
 	$('svg').hide()
 	for square in squares
 		do (square) ->
-			@horn.push(new Square(@paper, square.x, square.y, square.width, square.height, square.id, square.colour, square.user_id, square.name, square.html, square.dailymotion_id))
+			@horn.push(new Square(@paper, square.x, square.y, square.w, square.h, square.id, (if square.u? then 'FFFFFF' else '808285'), square.u, square.n, square.k, square.d_id))
 	$('#loading').fadeOut(500)
 	setTimeout("$('svg').fadeIn()", 500)
 

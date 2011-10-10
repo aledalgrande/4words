@@ -7,17 +7,14 @@ class Square < ActiveRecord::Base
   def as_json(options=nil)
     {
       :id => id,
-      :colour => colour,
-      :height => height,
-      :taken => taken,
-      :user_id => user_id,
-      :html => html,
-      :width => width,
+      :h => height,
+      :u => user_id,
+      :k => html,
+      :w => width,
       :x => x,
       :y => y,
-      :name => user_id ? user && user.name : nil,
-      :avatar => user_id ? user && user.image_url : nil,
-      :dailymotion_id => dailymotion_id
+      :n => user_id ? user && user.name : nil,
+      :d => dailymotion_id
     }
   end
   
