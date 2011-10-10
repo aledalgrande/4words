@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>4 Words - Help For A Change</title>
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Istok+Web">
-  <%= stylesheet_link_tag    "application" %>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald|Poly">
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application", 'raphael' %>
   <%= csrf_meta_tags %>
 </head>
@@ -11,6 +11,9 @@
 <div id="container">
 	<nav>
 		<ul>
+			<li id="home">
+				<%= link_to 'home', '/' %>
+			</li>
 			<li id="about">
 				<%= link_to 'about', '/about' %>
 			</li>
@@ -18,10 +21,8 @@
 					<li id="session">
 						<%= link_to 'Sign Out', signout_path %>
 					</li>
-					<li id="user_image">
+					<li id="user">
 						<%= image_tag current_user.image_url %>
-					</li>
-					<li id="user_name">
 						<%= current_user.name %>
 					</li>
 				<% else %>
@@ -29,10 +30,14 @@
 						<%= link_to 'Sign in', '/auth/facebook', :id => 'signin' %>
 					</li>
 				<% end %>
+			<li id="donate">
+				<%= link_to 'Donate',  "https://fundraise.unicef.org.uk/Donate/ToEvent/e0d4ef9d-985d-4ea8-9d25-9f480084f22d?project_id=8&return_url=#{root_url}" %>
 			</li>
 		</ul>
 	</nav>
-	<%= yield %>
+	<div id="hyu">
+		<%= yield %>
+	</div>
 </div>
 
 </body>

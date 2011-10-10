@@ -2,43 +2,42 @@
 	<div id="user_id" style="display: none;"><%= current_user.id %></div>
 <% end %>
 
-<div id="left">
-	<div id="logo">
-		<%= image_tag "logo.png", :title => "logo", :class => "logo" %>
-	</div>
+<div id="logo">
+	<%= image_tag "logo.png", :title => "logo", :class => "logo" %>
 </div>
 
-<div id="right">
+<div id="introduction">
 	<h2>
 		13 million people in 
-		the Horn of Africa are facing a hunger crisis.
+		the Horn of Africa are facing a hunger crisis
 	</h2>
 
 	<h3>
 		<p>
 			Right now, today, children in East Africa are facing a desperate crisis caused by prolonged drought, soaring food prices and conflict. The United Nations has formally declared a famine in parts of southern Somalia.
 		</p>
-		<p>
-			This crisis is getting worse and 4Words wants you to act now to save lives by using creativity and expression to highlight this crisis to the world and to make each individual want to 'Help For A Change'.
-		</p>
-		<p>
-			Click on a square on the map to take over your part of East Africa and upload your video. You can be as creative as you want with the videos you upload, all we ask is that you include in some format the 4 words 'Help For a Change' and that you donate, whatever you can, it WILL make a difference.
-		</p>
 	</h3>
-	
-	<div id="donate">
-		<%= link_to "https://fundraise.unicef.org.uk/Donate/ToEvent/e0d4ef9d-985d-4ea8-9d25-9f480084f22d?project_id=8&return_url=#{root_url}" do %>
-			<%= image_tag 'donate-button.png' %>
-		<% end %>
-	</div>
-	
-	<%= image_tag 'mini-africa.png', :id => 'mini-africa' %>
 </div>
 
 <div id="loader">
 	<div id="loading">
-		Loading...
+		Flying to the Horn...
 	</div>
+</div>
+
+<div id="instructions">
+	<h2>
+		How to help change the world
+	</h2>
+
+	<h3>
+		<p>
+			This crisis is getting worse and 4Words wants you to act now to save lives by using creativity and expression to highlight this crisis to the world and to make each individual want to 'Help For A Change'.
+		</p>
+		<p>
+			Click on a square on the map to take over your part of East Africa and upload your video. You can be as creative as you want with the videos you upload, all we ask is that you include in some format the 4 words 'Help For a Change' and that you <%= link_to 'donate',  "https://fundraise.unicef.org.uk/Donate/ToEvent/e0d4ef9d-985d-4ea8-9d25-9f480084f22d?project_id=8&return_url=#{root_url}" %>, whatever you can, it WILL make a difference.
+		</p>
+	</h3>
 </div>
 
 <script src="http://api.dmcdn.net/all.js"></script>

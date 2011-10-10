@@ -31,11 +31,12 @@ abbr,acronym { border:0;
 }
 
 /*dev*/
-$fs: 13px;
+$fs: 18px;
 $violet: #59466D;
+$red: #CE1526;
 body {
 /*	background: url(background.jpg) top left no-repeat;*/
-	font-family: 'Istok Web' sans-serif;
+	font-family: 'Poly', serif;
 	font-size: $fs;
 }
 
@@ -43,72 +44,77 @@ body {
 	width: 1136px;
 	margin: 0 auto;
 	position: relative;
+	overflow: hidden;
 }
 
-#left, #right {
-	margin-top: 30px;
-	margin-left: 150px;
-	width: 350px;
+#logo {
+	position: absolute;
+	right: 86px;
+	top: 228px;
 }
 
-#left {
+#introduction, #instructions {
+	clear: both;
+	width: 95%;
 	text-align: center;
-	float: left;
-	#logo {
-		margin: 10px 0;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	a {
+		color: $red;
+		font-weight: bold;
+		text-decoration: none;
 	}
-}
-
-#right {
-	float: left;
 	h2 {
 		font-weight: bold;
 		font-size: 34px;
 		line-height: 40px;
 		color: #59466d;
-		text-align: left;
+		font-family: 'Oswald', sans-serif;
 	}
 	h3 p {
 		color: #78797c;
-		text-align: left;
-	}
-	h4, h4 a {
-		color: #ee3a68;
-		text-transform: uppercase;
-		text-align: left;
-	}
-	h2, h3 p, h4 {
-		margin: 5px 0;
+		width: 80%;
+		margin: 15px auto;
 	}
 }
 
 #loader {
-	clear: both;
 	width: 772px;
 	height: 880px;
 	text-align: center;
-	display: table-cell;
-	vertical-align: middle;
 	font-size: $fs*2;
-	position: absolute;
-	top: 570px;
-	left: 160px;
+	margin-right: 250px;
+	margin-bottom: 25px;
+	float: right;
 }
 
 #donate {
 	text-align: right;
-	padding-right: 30px;
-	padding-top: 10px;
+	padding: 0;
+	margin-top: 17px;
+	margin-right: 25px;
+	float: right;
+	a {
+		border-radius: 2px;
+		background: #B30F1E;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce1526', endColorstr='#b30f1e');
+		background: -webkit-gradient(linear, left top, left bottom, from($red), to(#B30F1E));
+		background: -moz-linear-gradient(top, $red, #B30F1E );
+		color: white;
+		display: block;
+		padding: 5px 30px;
+		margin: 0;
+	}
 }
 
 nav {
-	background: url(nav_background.png) bottom left no-repeat;
-	width: 805px;
-	height: 74px;
-	padding-top: 15px;
-	margin: 0 auto;
-	overflow: hidden;
-	font-size: $fs*1.5;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+	font-size: $fs*1.2;
+	position: fixed;
+	z-index: 999;
+	width: 1136px;
+	background-color: white;
+	font-family: 'Oswald', sans-serif;
 	a {
 		text-transform: uppercase;
 		text-decoration: none;
@@ -117,14 +123,25 @@ nav {
 	}
 	ul {
 		overflow: hidden;
-		margin-bottom: 15px;
 	}
 	li {
-		display: table-cell;
-		padding: 0 10px;
-		height: 59px;
+		padding: 20px 10px 0 10px;
+		height: 52px;
+		float: left;
+		color: #78797c;
+	}
+}
+
+#user {
+	padding: 13px;
+	img {
 		vertical-align: middle;
 	}
+}
+
+#hyu {
+	padding-top: 95px;
+	overflow: hidden;
 }
 
 #overlay .content {
