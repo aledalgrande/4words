@@ -52,15 +52,20 @@ class Horn
 @horn = new Horn()
 
 class Square
-	constructor: (@paper, @x, @y, @width, @height, @id, @colour, @user_id, @user_name, @html, @dailymotion_id) ->
+	constructor: (@paper, @x, @y, @width, @height, @id, @user_id, @user_name, @html, @dailymotion_id) ->
+		@colour = if @user_id? then 'FFFFFF' else '808285'
+		@opacity = if @user_id? then 0.1 else 0.85
 		id = @id
 		square = this
+		image = @paper.image('/assets/african-kids.jpg', 0, 0, 725, 900)
+		image.attr({ "clip-rect": "#{@x},#{@y},#{@width},#{@height}"});
 		raph_square = @paper.rect(@x, @y, @width, @height)
-		raph_square.attr {'fill': '#' + @colour, 'stroke': '#333'}
+		raph_square.attr {'fill': '#' + @colour, 'stroke': '#333', 'opacity': @opacity}
 		@set = @paper.set raph_square
 		@set.mouseover =>
 			if !@zoomed
 				raph_square.toFront()
+				raph_square.attr 'opacity', 0.9
 				raph_square.animate({stroke: '#f00', 'stroke-width': 3}, 500, '<>')
 		@set.mouseout (event) =>
 			bb = @set.getBBox()
@@ -70,6 +75,7 @@ class Square
 				raph_square.animate({stroke: '#333', 'stroke-width': 1}, 500, '<>')
 				raph_square.animate({width: @width, height: @height, x: @x, y: @y}, 500, 'bounce')
 				@text.remove() if @text
+				raph_square.attr 'opacity', @opacity
 				@zoomed = false
 		raph_square.click =>
 			if !@zoomed
@@ -114,7 +120,7 @@ drawMap = =>
 	$('svg').hide()
 	for square in squares
 		do (square) ->
-			@horn.push(new Square(@paper, square.x, square.y, square.w, square.h, square.id, (if square.u? then 'FFFFFF' else '808285'), square.u, square.n, square.k, square.d_id))
+			@horn.push(new Square(@paper, square.x, square.y, square.w, square.h, square.id, square.u, square.n, square.k, square.d_id))
 	$('#loading').fadeOut(500)
 	setTimeout("$('svg').fadeIn()", 500)
 
