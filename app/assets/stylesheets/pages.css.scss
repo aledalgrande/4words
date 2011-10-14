@@ -41,16 +41,16 @@ body {
 }
 
 #container {
-	width: 1136px;
+	width: 900px;
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
 }
 
-#logo {
+#africa {
 	position: absolute;
-	right: 86px;
-	top: 228px;
+	right: 205px;
+	top: 316px;
 }
 
 #introduction, #instructions {
@@ -83,15 +83,16 @@ body {
 	height: 880px;
 	text-align: center;
 	font-size: $fs*2;
-	margin-right: 250px;
+	margin-right: 150px;
 	margin-bottom: 25px;
 	float: right;
 }
 
 #donate {
 	text-align: right;
+	font-size: $fs*1.2;
 	padding: 0;
-	margin-top: 17px;
+	margin-top: 7px;
 	margin-right: 25px;
 	float: right;
 	a {
@@ -111,14 +112,16 @@ body {
 	float: right;
 	width: 280px;
 	margin-top: 3px;
+	padding-top: 10px;
 }
 
 nav {
 	border-bottom: 1px solid rgba(0,0,0,0.3);
-	font-size: $fs*1.2;
+	font-size: $fs*0.8;
 	position: fixed;
 	z-index: 999;
-	width: 1136px;
+	width: 900px;
+	height: 60px;
 	background-color: white;
 	font-family: 'Oswald', sans-serif;
 	a {
@@ -132,21 +135,20 @@ nav {
 	}
 	li {
 		padding: 20px 10px 0 10px;
-		height: 52px;
 		float: left;
 		color: #78797c;
 	}
 }
 
 #user {
-	padding: 13px;
+	padding: 5px;
 	img {
 		vertical-align: middle;
 	}
 }
 
 #hyu {
-	padding-top: 95px;
+	padding-top: 70px;
 	overflow: hidden;
 }
 
