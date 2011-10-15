@@ -25,7 +25,7 @@
 	<h2>Meet the team</h2>
 	<% @personas.each do |persona| %>
 		<div class="persona">
-			<h3><%= persona[:name] %></h3>
+			<h3><%= persona[:name] %> ● <%= link_to "@#{persona[:twitter]}", "http://twitter.com/#{persona[:twitter]}", :target => :blank %></h3>
 			<h4><%= persona[:role] %></h4>
 			<%= image_tag "about/#{persona[:img]}.png" %>
 			<p>
