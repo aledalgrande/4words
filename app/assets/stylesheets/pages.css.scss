@@ -33,7 +33,21 @@ abbr,acronym { border:0;
 /*dev*/
 $fs: 18px;
 $violet: #59466D;
-$red: #CE1526;
+$red: #eb0e67;
+
+@mixin donation {
+	a {
+		border-radius: 2px;
+		background: #B30F1E;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb0e67', endColorstr='#c8103c');
+		background: -webkit-gradient(linear, left top, left bottom, from($red), to(#c8103c));
+		background: -moz-linear-gradient(top, $red, #c8103c);
+		color: white;
+		display: block;
+		padding: 5px 30px;
+		margin: 0;
+	}
+}
 body {
 /*	background: url(background.jpg) top left no-repeat;*/
 	font-family: 'Poly', serif;
@@ -49,8 +63,16 @@ body {
 
 #africa {
 	position: absolute;
-	right: 205px;
+	right: 155px;
 	top: 316px;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 34px;
+	line-height: 40px;
+	color: #59466d;
+	font-family: 'Oswald', sans-serif;
 }
 
 #introduction, #instructions {
@@ -64,13 +86,6 @@ body {
 		font-weight: bold;
 		text-decoration: none;
 	}
-	h2 {
-		font-weight: bold;
-		font-size: 34px;
-		line-height: 40px;
-		color: #59466d;
-		font-family: 'Oswald', sans-serif;
-	}
 	h3 p {
 		color: #78797c;
 		width: 80%;
@@ -83,7 +98,7 @@ body {
 	height: 880px;
 	text-align: center;
 	font-size: $fs*2;
-	margin-right: 150px;
+	margin-right: 100px;
 	margin-bottom: 25px;
 	float: right;
 }
@@ -95,17 +110,22 @@ body {
 	margin-top: 7px;
 	margin-right: 25px;
 	float: right;
+	@include donation;
+}
+
+#donate_big {
+	font-size: $fs*1.4;
+	padding: 0;
+	width: 180px;
+	margin: 0 10px;
+	font-family: 'Oswald', sans-serif;
+	height: 90px;
 	a {
-		border-radius: 2px;
-		background: #B30F1E;
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce1526', endColorstr='#b30f1e');
-		background: -webkit-gradient(linear, left top, left bottom, from($red), to(#B30F1E));
-		background: -moz-linear-gradient(top, $red, #B30F1E );
-		color: white;
-		display: block;
-		padding: 5px 30px;
-		margin: 0;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: bold;
 	}
+	@include donation;
 }
 
 #social {
@@ -220,4 +240,44 @@ nav {
 			margin-left: 20px;
 		}
 	}
+}
+
+.persona {
+	overflow: hidden;
+	font-size: $fs*0.7;
+	padding: 10px;
+	img {
+		float: left;
+	}
+	img, p {
+		padding: 10px 10px 0 0;
+	}
+	h3 {
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 25px;
+		color: #59466d;
+		font-family: 'Oswald', sans-serif;
+	}
+	h4 {
+		font-size: 16px;
+		line-height: 20px;
+		color: $red;
+		font-family: 'Oswald', sans-serif;
+	}
+}
+
+.column {
+	width: 46%;
+	padding: 0 2%;
+	float: left;
+	margin-top: 15px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.space_above {
+	padding-top: 50px;
 }

@@ -1,0 +1,36 @@
+<div class="column centered">
+	<div>
+		<%= image_tag 'logo.png' %>
+	</div>
+	<div id="introduction" class="space_above" style="text-align: left;">
+		<h2>
+			13 million people in 
+			the Horn of Africa are facing a hunger crisis
+		</h2>
+		<h3>
+			<p style="width: 100%">
+				Right now, today, children in East Africa are facing a desperate crisis caused by prolonged drought, soaring food prices and conflict. The United Nations has formally declared a famine in parts of southern Somalia.
+			</p>
+		</h3>
+	</div>
+	<div id="donate_big">
+		<%= link_to 'Donate',  "https://fundraise.unicef.org.uk/Donate/ToEvent/e0d4ef9d-985d-4ea8-9d25-9f480084f22d?project_id=8&return_url=#{root_url}" %>
+	</div>
+	<div>
+		<%= image_tag 'about/map.png' %>
+	</div>
+</div>
+
+<div class="column">
+	<h2>Meet the team</h2>
+	<% @personas.each do |persona| %>
+		<div class="persona">
+			<h3><%= persona[:name] %></h3>
+			<h4><%= persona[:role] %></h4>
+			<%= image_tag "about/#{persona[:img]}.png" %>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			</p>
+		</div>
+	<% end %>
+</div>
