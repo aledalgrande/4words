@@ -41,6 +41,24 @@ window.onload = ->
 							$('#dailymotion_id').val(response.id)
 							DM.api "/video/#{video.id}", {fields: 'embed_html'}, (response) =>
 								$('#video_embed_html').val(response.embed_html)
+	$('#instructions').hover(-> 
+		@inst = {height: $(this).height(), width: $(this).width(), font: $(this).css('fontSize'), h2: $(this).find('h2').css('fontSize'), h2l: $(this).find('h2').css('lineHeight')}
+		$(this).animate({width: '+=100', height: '+=200', fontSize: '18px', paddingLeft: '10px'}, 500)
+		$(this).find('h2').animate({fontSize: '24px', lineHeight: '30px'}, 500)
+	, ->
+		$(this).animate({width: @inst.width, height: @inst.height, fontSize: @inst.font, paddingLeft: '0px'}, 500)
+		$(this).find('h2').animate({fontSize: @inst.h2, lineHeight: @inst.lineHeight}, 500)
+	)
+	$('#like').click (e) ->
+		e.preventDefault()
+		$.post '/votes', {video_id: $('#video_id').text().replace(/^\s+|\s+$/g, '')}, (data) ->
+			$(this).parent().html('Liked!')
+		, 'json'
+	$('#report').click (e) ->
+		e.preventDefault()
+		$.post '/reports', {video_id: $('#video_id').text().replace(/^\s+|\s+$/g, '')}, (data) ->
+			$(this).parent().html('Reported!')
+		, 'json'
 
 class Horn
 	constructor: ->
@@ -58,7 +76,7 @@ class Square
 		id = @id
 		square = this
 		image = @paper.image('/assets/african-kids.jpg', 0, 0, 725, 900)
-		image.attr({ "clip-rect": "#{@x},#{@y},#{@width},#{@height}"});
+		image.attr({ "clip-rect": "#{@x},#{@y},#{@width},#{@height}"})
 		raph_square = @paper.rect(@x, @y, @width, @height)
 		raph_square.attr {'fill': '#' + @colour, 'stroke': '#333', 'opacity': @opacity}
 		@set = @paper.set raph_square
@@ -103,6 +121,7 @@ class Square
 			if @user_id
 				$('#author').text(@user_name)
 				if @html
+					$("#video_id").text(@dailymotion_id)
 					$("#video_iframe").html(@html)
 					$('#video_meta').show()
 					DM.api "/video/#{@dailymotion_id}", {fields: 'views_total'}, (response) =>
@@ -120,9 +139,10 @@ drawMap = =>
 	$('svg').hide()
 	for square in squares
 		do (square) ->
-			@horn.push(new Square(@paper, square.x, square.y, square.w, square.h, square.id, square.u, square.n, square.k, square.d_id))
+			@horn.push(new Square(@paper, square.x, square.y, square.w, square.h, square.id, square.u, square.n, square.k, square.d))
 	$('#loading').fadeOut(500)
-	setTimeout("$('svg').fadeIn()", 500)
+	setTimeout("$('svg').show()", 500)
+	setTimeout("$('#africa').show()", 500)
 
 organise_text = (text) ->
 	organised_text = []

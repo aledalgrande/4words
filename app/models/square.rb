@@ -1,6 +1,8 @@
 class Square < ActiveRecord::Base
   belongs_to :user
   before_save :set_colour, :unset_html
+  has_many :votes
+  has_many :reports
   
   STD_COLOURS = { :taken => 'FFFFFF', :not_taken => '808285' }
   

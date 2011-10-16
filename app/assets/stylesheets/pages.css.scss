@@ -34,6 +34,7 @@ abbr,acronym { border:0;
 $fs: 18px;
 $violet: #59466D;
 $red: #eb0e67;
+$grey: #78797c;
 
 @mixin donation {
 	a {
@@ -48,10 +49,29 @@ $red: #eb0e67;
 		margin: 0;
 	}
 }
+
+@mixin news {
+	a {
+		color: $red;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	h3 p {
+		color: $grey;
+		width: 80%;
+		margin: 15px auto;
+	}
+	img {
+		float: left;
+		margin-right: 40px;
+	}
+}
+
 body {
 /*	background: url(background.jpg) top left no-repeat;*/
 	font-family: 'Poly', serif;
 	font-size: $fs;
+	color: $grey;
 }
 
 #container {
@@ -63,8 +83,9 @@ body {
 
 #africa {
 	position: absolute;
-	right: 155px;
-	top: 316px;
+	right: 195px;
+	top: 356px;
+	display: none;
 }
 
 h2 {
@@ -75,21 +96,32 @@ h2 {
 	font-family: 'Oswald', sans-serif;
 }
 
-#introduction, #instructions {
+#introduction {
 	clear: both;
 	width: 95%;
-	text-align: center;
+	text-align: left;
 	margin: 0 auto;
-	padding-bottom: 20px;
-	a {
-		color: $red;
-		font-weight: bold;
-		text-decoration: none;
+	padding-bottom: 40px;
+	@include news;
+}
+
+#instructions {
+	text-align: left;
+	@include news;
+	font-size: $fs*0.6;
+	position: absolute;
+	top: 320px;
+	right: 0;
+	width: 120px;
+	background-color: white;
+	z-index: 998;
+	h2 {
+		font-size: $fs*1;
+		line-height: $fs*1;
+		margin: 5px 0;
 	}
 	h3 p {
-		color: #78797c;
-		width: 80%;
-		margin: 15px auto;
+		margin: 0;
 	}
 }
 
@@ -98,7 +130,7 @@ h2 {
 	height: 880px;
 	text-align: center;
 	font-size: $fs*2;
-	margin-right: 100px;
+	margin-right: 120px;
 	margin-bottom: 25px;
 	float: right;
 }
@@ -154,7 +186,7 @@ nav {
 		overflow: hidden;
 	}
 	li {
-		padding: 20px 10px 0 10px;
+		padding: 18px 10px 0 10px;
 		float: left;
 		color: #78797c;
 	}
@@ -212,6 +244,7 @@ nav {
 	height: 100%;
 	background-color: rgba(22, 22, 22, 0.898);
 	z-index: 1001;
+	font-size: $fs - 2;
 }
 
 .content {
@@ -238,6 +271,13 @@ nav {
 		list-style-type: square;
 		li {
 			margin-left: 20px;
+		}
+	}
+	a {
+		color: $violet;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 }
@@ -287,5 +327,21 @@ nav {
 }
 
 .space_above {
-	padding-top: 50px;
+	padding-top: 10px;
+}
+
+#disclaimer {
+	background-color: $red;
+	color: white;
+	text-align: center;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+#thanks {
+	clear: both;
+	padding: 10px;
+	font-size: $fs*0.9;
 }

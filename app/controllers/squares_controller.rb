@@ -12,7 +12,7 @@ class SquaresController < ApplicationController
           current_user.square = square
           square.update_attributes(:html => params[:video_embed_html], :dailymotion_id => params[:dailymotion_id])
           @graph = Koala::Facebook::API.new(current_user.token)
-          @graph.put_wall_post('we will save Africa')
+          @graph.put_wall_post("4 Words", {:name => "#{current_user.name} has published 4 Words to help beat the famine in East Africa!", :link => root_url})
         end
       end
     end

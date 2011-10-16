@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111009112558) do
+ActiveRecord::Schema.define(:version => 20111016180422) do
+
+  create_table "reports", :force => true do |t|
+    t.integer  "square_id"
+    t.string   "type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "squares", :force => true do |t|
     t.integer  "x"
@@ -36,6 +44,14 @@ ActiveRecord::Schema.define(:version => 20111009112558) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "token"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "square_id"
+    t.string   "type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

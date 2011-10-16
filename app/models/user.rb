@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_one :square
+  has_many :votes
+  has_many :reports
   
   def self.create_with_omniauth(auth)
     create! do |user|
