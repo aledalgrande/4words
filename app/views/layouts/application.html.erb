@@ -7,6 +7,7 @@
   <%= javascript_include_tag "application", 'raphael' %>
   <%= csrf_meta_tags %>
 	<%= favicon_link_tag 'favicon.jpg' %>
+	<meta name="description" property="og:description" content="Get creative with 4 Words to raise awareness for the famine in East Africa!" />
 </head>
 <body>
 	<% if @disclaimer %>
@@ -41,14 +42,23 @@
 				</li>
 				<li id="social">
 					<!-- AddThis Button BEGIN -->
-					<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-						<a class="addthis_button_preferred_1"></a>
-						<a class="addthis_button_preferred_2"></a>
+					<div class="addthis_toolbox addthis_default_style addthis_32x32_style" addthis:url="http://4words.co">
+						<a class="addthis_button_facebook"></a>
+						<a class="addthis_button_twitter"></a>
 						<a class="addthis_button_preferred_3"></a>
 						<a class="addthis_button_compact"></a>
 						<a class="addthis_counter addthis_bubble_style"></a>
 					</div>
 					<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e9387bd04058ecc"></script>
+					<script type="text/javascript">
+						var addthis_share = {
+							url: 'http://4words.co',
+							description: 'Get creative with 4 Words to raise awareness for the famine in East Africa!',
+							templates: {
+								twitter: 'Get creative with 4 Words {{url}} via @_4words'
+							}
+						}
+					</script>
 					<!-- AddThis Button END -->
 				</li>
 			</ul>
