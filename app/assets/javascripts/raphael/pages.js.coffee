@@ -19,9 +19,10 @@ window.onload = ->
 		e.stopPropagation()
 	$('#refresh_dailymotion').click (e) ->
 		e.preventDefault()
-		$('#videos').html('')
+		$('#videos').html('<img src="assets/ajax-loader.gif" />')
 		user = $('#username').val().replace(/^\s+|\s+$/g, '')
 		DM.api '/user/' + user + '/videos', {limit: 5}, (response) ->
+			$('#videos').html('')
 			if response && response.list
 				for video in response.list
 					DM.api "/video/#{video.id}", {fields: 'thumbnail_small_url,title,id,created_time,duration'}, (response) =>

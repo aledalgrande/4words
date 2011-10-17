@@ -31,7 +31,7 @@ abbr,acronym { border:0;
 }
 
 /*dev*/
-$fs: 18px;
+$fs: 15px;
 $violet: #59466D;
 $red: #eb0e67;
 $grey: #78797c;
@@ -83,15 +83,14 @@ body {
 
 #africa {
 	position: absolute;
-	right: 195px;
-	top: 356px;
+	right: 205px;
+	top: 306px;
 	display: none;
 }
 
 h2 {
-	font-weight: bold;
-	font-size: 34px;
-	line-height: 40px;
+	font-size: $fs*1.2;
+	line-height: $fs*1.6;
 	color: #59466d;
 	font-family: 'Oswald', sans-serif;
 }
@@ -103,6 +102,12 @@ h2 {
 	margin: 0 auto;
 	padding-bottom: 40px;
 	@include news;
+	h4 {
+		color: $violet;
+		font-size: $fs*1.1;
+		line-height: $fs*1.3;
+		font-family: 'Oswald', sans-serif;
+	}
 }
 
 #instructions {
@@ -169,7 +174,7 @@ h2 {
 
 nav {
 	border-bottom: 1px solid rgba(0,0,0,0.3);
-	font-size: $fs*0.8;
+	font-size: $fs*1;
 	position: fixed;
 	z-index: 999;
 	width: 900px;
@@ -271,11 +276,16 @@ nav {
 		list-style-type: square;
 		li {
 			margin-left: 20px;
+			padding: 2px 0;
+			img, input {
+				margin: 2px 0;
+			}
 		}
 	}
 	a {
 		color: $violet;
 		text-decoration: none;
+		font-weight: bold;
 		&:hover {
 			text-decoration: underline;
 		}
@@ -284,7 +294,7 @@ nav {
 
 .persona {
 	overflow: hidden;
-	font-size: $fs*0.7;
+	font-size: $fs*0.85;
 	padding: 10px;
 	img {
 		float: left;
@@ -320,6 +330,10 @@ nav {
 	padding: 0 2%;
 	float: left;
 	margin-top: 15px;
+	h2 {
+		font-size: $fs*2;
+		font-weight: bold;
+	}
 }
 
 .centered {

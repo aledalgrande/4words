@@ -7,17 +7,21 @@
 </div>
 
 <div id="introduction">
-	<%= image_tag 'logo.png' %>
+	<%= image_tag 'logo.jpg' %>
 	<h2>
 		13 million people in 
 		the Horn of Africa are facing a hunger crisis
-	</h2>
-
-	<h3>
-		<p>
-			Right now, today, children in East Africa are facing a desperate crisis caused by prolonged drought, soaring food prices and conflict. The United Nations has formally declared a famine in parts of southern Somalia.
-		</p>
-	</h3>
+	</h2>	
+	<p>
+		Right now, today, children in East Africa are facing a desperate crisis caused by prolonged drought, soaring food prices and conflict. 4 Words hopes to harness your creativity to highlight this crisis to a wider audience.
+	</p>
+	<h4>
+		How you can help
+	</h4>
+	<p>
+		Sign in with your Facebook details ● Adopt your square on the map ● Upload or record your video ● Share it with everyone and anyone<br/>
+		You can be as creative as you want with the video you upload making sure to include in some format the 4 words Help For A Change and that you <%= link_to 'donate',  "https://fundraise.unicef.org.uk/Donate/ToEvent/e0d4ef9d-985d-4ea8-9d25-9f480084f22d?project_id=8&return_url=#{root_url}" %> whatever you can.
+	</p>
 </div>
 
 <div id="loader">
@@ -27,16 +31,6 @@
 </div>
 
 <div id="instructions">
-	<h2>
-		How to help change the world
-	</h2>
-
-	<h3>
-		<p>« Zoom</p>
-		<p>
-			Click on a square on the map to take over your part of East Africa and upload your video.<br/>You can be as creative as you want with the video you upload, all we ask is that you include in some format the 4 words <span class="bold">Help For a Change</span> and that you <%= link_to 'donate',  "https://fundraise.unicef.org.uk/Donate/ToEvent/e0d4ef9d-985d-4ea8-9d25-9f480084f22d?project_id=8&return_url=#{root_url}" %>, whatever you can, it WILL make a difference.
-		</p>
-	</h3>
 </div>
 
 <script src="http://api.dmcdn.net/all.js"></script>
@@ -54,7 +48,7 @@
 				return user_name;
 			}
 			else {
-				return 'Take square!';
+				return 'Adopt square!';
 			}
 		<% else %>
 			if (user_id == '<%= current_user.id if current_user %>')
@@ -63,7 +57,7 @@
 				return user_name;
 			}
 			else {
-				return 'Not taken.';
+				return 'Not adopted.';
 			}
 		<% end %>
 	}
@@ -71,9 +65,9 @@
 
 <div id="overlay" class="overlay">
 	<div class="content">
-		<h2>Take over your square!</h2>
+		<h2>Adopt over your square!</h2>
 		<div class="cont">
-			<p>To get hold of this square you need a video of yourself where the only constraint is you have to say the four words: "Help for a change". The rest is up to you!</p>
+			<p>To adopt this square you need a video of yourself where the only constraint is you have to include the four words: "Help for a change". The rest is up to you!</p>
 			<p>When you have the video you just need to complete 4 steps:</p>
 			<ul>
 				<li>
@@ -90,10 +84,7 @@
 					<p><%= text_field_tag 'username' %></p>
 				</li>
 				<li>
-					Click on the video you want to link to (it usually takes 10-15 minutes to Dailymotion to publish it)
-					<p>
-						<%= link_to 'Refresh', '#', :id => 'refresh_dailymotion' %>
-					</p>
+					Click <%= link_to 'Refresh', '#', :id => 'refresh_dailymotion' %> and then on the video you want to link to (it usually takes 10-15 minutes for Dailymotion to publish it)
 					<div id="videos">&nbsp;</div>
 				</li>
 			</ul>
@@ -119,7 +110,7 @@
 				<span id="reports"><%= link_to 'Report ✖', '#', :id => 'report' %></span>
 				<span id="views"></span> views
 			</div>
-			<div id="video_actions"><%= link_to 'Remove', '#', :onclick => "window.location = '#{free_url}; return false;'" %></div>
+			<div id="video_actions"><%= link_to 'Remove', '#', :onclick => "window.location = '#{free_url};'" %></div>
 		</div>
 	</div>
 </div>
