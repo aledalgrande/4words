@@ -15,19 +15,19 @@ class PagesController < ApplicationController
         :img => 'ant',
         :name => 'Anthony Wales',
         :role => 'Project Coordinator',
-        :desc => "A 28 year old Customer Service Team Manager, husband and father with a passion for Business, Technology and Media. Since becoming a father I've become determined to succeed, not necessarily because I want to rake in the $$$ but because I have a craving and a desire to create something.",
+        :desc => "Ant (or Rocco) has a passion for business technology and a creative entrepreneurial spirit. He enjoys managing projects, especially when he can influence the end product! He got a team together to help the 50/50 project because as a husband and father, couldn't imagine what it would be like to not be able to feed your wife let alone your child.",
         :twitter => 'anthonyisrocco'
       }, {
         :img => 'dan',
         :name => 'Daniel Lewis',
         :role => 'Graphic Designer',
-        :desc => "Thrives on developing creative solutions to design problems, focused and passionate about illustration, branding, digital and good old pencil skills.\nI'm a keen cook and like travelling the UK for restaurants.\n\"I'm always prepared to help others and this project was a great opportunity to help make a big difference to the future of East Africa.\"",
+        :desc => "Thrives on developing creative solutions to design problems, focused and passionate about illustration, branding, digital and good old pencil skills.\nI'm a keen cook and like travelling the UK for restaurants. \"I'm always prepared to help others and this project was a great opportunity to help make a big difference to the future of East Africa.\"",
         :twitter => 'FrenchieMan'
       }, {
         :img => 'daz',
         :name => 'Darren Pinner',
         :role => 'PR Director',
-        :desc => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        :desc => "In the day he masquerades as an MD of a field marketing company and at night he plots his next 'big idea'. Currently working from Bronte Beach, Sydney - it's tough but someone's got to do it.<br/>50/50 offered the opportunity to collaborate with some of the most talented people on the planet to help those on the planet most at need.",
         :twitter => 'Darrenpinner'
       }].shuffle
   end

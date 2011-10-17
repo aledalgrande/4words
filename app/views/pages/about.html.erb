@@ -31,7 +31,7 @@
 			<h4><%= persona[:role] %></h4>
 			<%= image_tag "about/#{persona[:img]}.png" %>
 			<p>
-				<%= persona[:desc] %>
+				<%= raw persona[:desc] %>
 			</p>
 		</div>
 	<% end %>
